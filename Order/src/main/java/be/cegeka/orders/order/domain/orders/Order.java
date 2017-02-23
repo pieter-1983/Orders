@@ -5,9 +5,7 @@ import be.cegeka.orders.order.domain.customers.Customer;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "ORDERS")
@@ -25,7 +23,7 @@ public class Order {
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
-    private List<ArticleQuantityCombo> colliPerOrder;
+    private List<ItemQuantityCombo> colliPerOrder;
 
     public Order(Customer customer) {
         this.customer = customer;

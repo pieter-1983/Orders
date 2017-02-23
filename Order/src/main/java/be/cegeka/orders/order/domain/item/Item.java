@@ -22,9 +22,9 @@ public class Item {
     private String description;
 
     @Column(name = "SELLING_PRICE")
-    private BigDecimal sellingPrice;
+    private double sellingPrice;
 
-
-
-
+    public double getSellingPrice() {
+        return sellingPrice;
+    }
 }
