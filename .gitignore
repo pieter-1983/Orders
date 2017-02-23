@@ -5,6 +5,7 @@
 .idea
 out
 *.iml
+Order/.idea/workspace.xml
 
 ### Gradle ###
 .gradle
