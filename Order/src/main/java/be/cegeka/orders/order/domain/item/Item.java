@@ -15,6 +15,7 @@ public class Item {
     @Column(name = "ITEM_ID")
     private int id;
 
+
     @Column(name = "NAME")
     private String name;
 

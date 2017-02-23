@@ -1,5 +1,5 @@
 package be.cegeka.orders.order.domain.stock;
-import javax.inject.Named;
+import be.cegeka.orders.order.domain.orders.ItemQuantityCombo;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,11 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    
     @Column(name =  "STOCK_ID")
     private int stockId;
+
 
     @Column(name =  "ITEM_ID")
     private int itemId;
