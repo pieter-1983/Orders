@@ -16,19 +16,21 @@ public class Order {
     @Column(name = "ORDER_ID")
     private int order_id;
 
-    @OneToMany (cascade = CascadeType.ALL)
+    @ManyToOne (cascade = CascadeType.ALL)
     @Column(name = "CUSTOMER_ID")
     private Customer customer;
     @Column(name = "ORDER_DATE")
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
-    private List<ItemQuantityCombo> colliPerOrder;
+    @OneToMany
+    @Column(name = "ITEM_QUANTITY_COMBO")
+    private List<ItemQuantityCombo> itemQuantityCombos;
 
     public Order(Customer customer) {
         this.customer = customer;
         this.orderDate = LocalDate.now();
-        colliPerOrder = new ArrayList<>();
+        itemQuantityCombos = new ArrayList<>();
     }
 
     public Order(){}

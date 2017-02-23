@@ -13,7 +13,7 @@ public class ItemQuantityCombo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_QUANTITY_ID")
     private int ITEM_QUANTITY_id;
-    @OneToMany
+    @ManyToOne
     @Column (name = "ITEM_ID")
     private Item item;
     @Column (name= "QUANTITY")
