@@ -1,11 +1,12 @@
 package be.cegeka.orders.order.domain.orders;
 
 import be.cegeka.orders.order.domain.customers.Customer;
-import org.apache.poi.ss.formula.PlainCellCache;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -23,12 +24,12 @@ public class Order {
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
-    private Map<Item, Integer> colliPerOrder;
+    private List<ArticleQuantityCombo> colliPerOrder;
 
     public Order(Customer customer) {
         this.customer = customer;
         this.orderDate = LocalDate.now();
-        colliPerOrder = new HashMap<>();
+        colliPerOrder = new ArrayList<>();
     }
 
     public Order(){}
