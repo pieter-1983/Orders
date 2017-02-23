@@ -14,7 +14,7 @@ public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    
+
     @Column(name =  "STOCK_ID")
     private int stockId;
 

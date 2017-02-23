@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Table(name = "ITEM_QUANTITY_COMBO")
 public class ItemQuantityCombo {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_QUANTITY_ID")
