@@ -1,6 +1,9 @@
 package be.cegeka.orders.order.domain.customers;
 
+import be.cegeka.orders.order.domain.orders.Order;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "CUSTOMERS")
@@ -10,6 +13,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID")
     private int id;
+    @OneToMany (cascade = CascadeType.ALL)
+    @Column(name = "CUSTOMER_ID")
+    private List<Order> orderList;
+
     @Column(name = "NAME")
     private String name;
     @Column(name = "LAST_NAME")
