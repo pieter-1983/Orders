@@ -1,4 +1,4 @@
-package be.cegeka.orders.order.domain.items;
+package be.cegeka.orders.order.domain.item;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Table(name = "ITEMS")
-public class Items {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
