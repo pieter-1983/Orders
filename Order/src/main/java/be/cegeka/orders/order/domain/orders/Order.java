@@ -16,9 +16,6 @@ public class Order {
     @Column(name = "ORDER_ID")
     private int order_id;
 
-    @ManyToOne (cascade = CascadeType.ALL)
-    @Column(name = "CUSTOMER_ID")
-    private Customer customer;
     @Column(name = "ORDER_DATE")
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
@@ -27,13 +24,11 @@ public class Order {
     @Column(name = "ITEM_QUANTITY_COMBO")
     private List<ItemQuantityCombo> itemQuantityCombos;
 
-    public Order(Customer customer) {
-        this.customer = customer;
+    public Order() {
         this.orderDate = LocalDate.now();
         itemQuantityCombos = new ArrayList<>();
     }
 
-    public Order(){}
 
     public int getOrder_id() {
         return order_id;

@@ -1,5 +1,6 @@
 package be.cegeka.orders.order.domain.stock;
 import be.cegeka.orders.order.domain.orders.ItemQuantityCombo;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,8 @@ public class Stock {
 
     @Column(name =  "ITEM_ID")
     private int itemId;
-
-    @Column (name = "STOCK")
-    List<ItemQuantityCombo> stock = new ArrayList();
+//
+//    @Column (name = "STOCK")
+//    List<ItemQuantityCombo> stock = new ArrayList<>();
 
 }
