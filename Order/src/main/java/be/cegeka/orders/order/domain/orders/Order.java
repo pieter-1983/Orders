@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Entity
+@Table(name = "ORDERS")
 public class Order {
 
     @Id
