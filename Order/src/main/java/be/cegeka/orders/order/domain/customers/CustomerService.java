@@ -13,4 +13,9 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return customerRepository.getAll();
     }
+
+    public void addCustomer(String name, String lastName) {
+        Customer customer=new Customer(name,lastName);
+        customerRepository.addCustomer(customer);
+    }
 }

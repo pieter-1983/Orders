@@ -2,6 +2,7 @@ package be.cegeka.orders.order.domain.item;
 
 import be.cegeka.orders.order.domain.customers.Customer;
 
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Created by dieterp on 23/02/2017.
  */
+@Named
 public class ItemRepository {
     @PersistenceContext
     private EntityManager entityManager;
