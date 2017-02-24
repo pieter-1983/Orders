@@ -12,9 +12,9 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID")
-    private int id;
+    private int customer_id;
     @OneToMany (cascade = CascadeType.ALL)
-    @Column(name = "CUSTOMER_ID")
+    @Column(name = "ORDER_ID")
     private List<Order> orderList;
 
     @Column(name = "NAME")
