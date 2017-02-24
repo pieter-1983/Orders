@@ -29,4 +29,7 @@ public class ItemService {
         throw new Exception("there is no item found");
     }
 
+    public List<Item> getAllItems(){
+        return itemRepository.getAll();
+    }
 }
