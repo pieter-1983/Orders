@@ -17,6 +17,7 @@ public class Order {
     private int order_id;
 
     @Column(name = "ORDER_DATE")
+
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
@@ -27,6 +28,23 @@ public class Order {
     public Order() {
         this.orderDate = LocalDate.now();
         itemQuantityCombos = new ArrayList<>();
+    }
+
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+
+    private double calculateTotalPrice(Order order){
+        double totalPrice = 0;
+
+        for (ItemQuantityCombo itemQuantityCombo : itemQuantityCombos)
+        {
+            totalPrice += itemQuantityCombo.getPrice();
+        }
+
+        return totalPrice;
     }
 
 
