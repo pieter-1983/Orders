@@ -33,4 +33,16 @@ public class Customer {
     public int getId() {
         return customer_id;
     }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

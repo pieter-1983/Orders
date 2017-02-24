@@ -1,7 +1,30 @@
 package be.cegeka.orders.order.controllers;
 
-/**
- * Created by stevene on 24/02/2017.
- */
+import be.cegeka.orders.order.domain.customers.Customer;
+import be.cegeka.orders.order.domain.customers.CustomerService;
+import org.springframework.web.bind.annotation.*;
+
+import javax.inject.Inject;
+import java.util.List;
+
+@RestController
+@RequestMapping(path = "/customer")
 public class CustomerController {
+
+    @Inject
+    private CustomerService customerService;
+
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public void addCustomer(
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "lastName") String lastName){
+        customerService.addCustomer(name, lastName);
+    }
 }
