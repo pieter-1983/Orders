@@ -5,10 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Order.iml" filepath="$PROJECT_DIR$/.idea/modules/Order.iml" group="Order" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Order_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Order_main.iml" group="Order" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Order_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Order_test.iml" group="Order" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/457710369/Orders.iml" filepath="$PROJECT_DIR$/.idea/modules/457710369/Orders.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/663368954/Supplier.iml" filepath="$PROJECT_DIR$/.idea/modules/663368954/Supplier.iml" group="Supplier" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/663368954/Supplier_main.iml" filepath="$PROJECT_DIR$/.idea/modules/663368954/Supplier_main.iml" group="Supplier" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/663368954/Supplier_test.iml" filepath="$PROJECT_DIR$/.idea/modules/663368954/Supplier_test.iml" group="Supplier" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1703668846/Orders.iml" filepath="$PROJECT_DIR$/.idea/modules/1703668846/Orders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/672696909/Supplier.iml" filepath="$PROJECT_DIR$/.idea/modules/672696909/Supplier.iml" group="Supplier" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/672696909/Supplier_main.iml" filepath="$PROJECT_DIR$/.idea/modules/672696909/Supplier_main.iml" group="Supplier" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/672696909/Supplier_test.iml" filepath="$PROJECT_DIR$/.idea/modules/672696909/Supplier_test.iml" group="Supplier" />
     </modules>
   </component>
 </project>
