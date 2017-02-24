@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CustomerRepositoryTest {
 
     @PersistenceContext
-    private EntityManager entityManager; 
+    private EntityManager entityManager;
 
     @Inject
     private CustomerRepository customerRepository;

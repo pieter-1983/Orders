@@ -11,9 +11,6 @@ import org.mockito.junit.MockitoRule;
 
 import java.awt.print.Book;
 import java.util.Arrays;
-
-import static com.sun.javaws.JnlpxArgs.verify;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 /**
