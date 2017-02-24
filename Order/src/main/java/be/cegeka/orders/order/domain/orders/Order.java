@@ -23,10 +23,13 @@ public class Order {
     @OneToMany
     @Column(name = "ITEM_QUANTITY_COMBO")
     private List<ItemQuantityCombo> itemQuantityCombos;
+    @Column(name = "DELIVERY_DATE")
+    private LocalDate deliverydate;
 
     public Order() {
         this.orderDate = LocalDate.now();
         itemQuantityCombos = new ArrayList<>();
+        this.deliverydate=LocalDate.now().plusDays(7);
     }
 
 
