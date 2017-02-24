@@ -14,4 +14,6 @@ public class OrderRepository {
     public List<Order> getAllOrders(){
         return entityManager.createQuery("select o from Order o" , Order.class).getResultList();
     }
+
+
 }

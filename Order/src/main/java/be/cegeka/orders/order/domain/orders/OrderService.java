@@ -1,9 +1,17 @@
 package be.cegeka.orders.order.domain.orders;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-/**
- * Created by dieterp on 24/02/2017.
- */
+@Named
 public class OrderService {
+
+    @Inject
+    private OrderRepository orderRepository;
+
+
+    public void addOrderToRepository(Order order){
+
+    }
 
 
 }
