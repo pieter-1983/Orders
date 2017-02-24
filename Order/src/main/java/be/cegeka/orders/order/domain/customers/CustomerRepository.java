@@ -3,6 +3,7 @@ package be.cegeka.orders.order.domain.customers;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Named
