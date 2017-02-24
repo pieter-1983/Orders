@@ -16,4 +16,8 @@ public class ItemRepository {
     public List<Item> getAll(){
         return entityManager.createQuery("select c from Item c" , Item.class).getResultList();
     }
+
+    public void addItem(Item item) {
+        entityManager.createQuery("");
+    }
 }

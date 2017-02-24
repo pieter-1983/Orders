@@ -35,19 +35,20 @@ public class Order {
 
 
     public double getTotalPrice() {
+        calculateTotalPrice();
         return totalPrice;
     }
 
+    public void addItemQuantityCombo(ItemQuantityCombo combo){
+        itemQuantityCombos.add(combo);
+    }
 
-    private double calculateTotalPrice(Order order){
-        double totalPrice = 0;
-
+    private void calculateTotalPrice(){
+        this.totalPrice = 0;
         for (ItemQuantityCombo itemQuantityCombo : itemQuantityCombos)
         {
             totalPrice += itemQuantityCombo.getPrice();
         }
-
-        return totalPrice;
     }
 
 

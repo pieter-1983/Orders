@@ -15,7 +15,6 @@ public class Item {
     @Column(name = "ITEM_ID")
     private int id;
 
-
     @Column(name = "NAME")
     private String name;
 
@@ -24,6 +23,12 @@ public class Item {
 
     @Column(name = "SELLING_PRICE")
     private double sellingPrice;
+
+    public Item(String name, String description, double sellingPrice) {
+        this.name = name;
+        this.description = description;
+        this.sellingPrice = sellingPrice;
+    }
 
     public double getSellingPrice() {
         return sellingPrice;
