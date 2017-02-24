@@ -7,9 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-/**
- * Created by dieterp on 23/02/2017.
- */
+
 @Named
 public class ItemRepository {
     @PersistenceContext
@@ -20,6 +18,6 @@ public class ItemRepository {
     }
 
     public void addItem(Item item) {
-        entityManager.createQuery("");
+        entityManager.persist(item);
     }
 }

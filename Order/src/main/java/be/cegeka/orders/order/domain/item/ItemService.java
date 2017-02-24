@@ -2,6 +2,7 @@ package be.cegeka.orders.order.domain.item;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.List;
 
 /**
  * Created by dieterp on 24/02/2017.
@@ -12,10 +13,20 @@ public class ItemService {
     private ItemRepository itemRepository;
 
     public void addItem(String name, String description , double sellPrice){
-
         Item item = new Item(name , description , sellPrice);
 
         itemRepository.addItem(item);
+    }
+
+    public Item findItemByName(String name) throws Exception {
+        for (Item item : itemRepository.getAll())
+        {
+            if (item.getName().equals(name))
+            {
+                return  item;
+            }
+        }
+        throw new Exception("there is no item found");
     }
 
 }
