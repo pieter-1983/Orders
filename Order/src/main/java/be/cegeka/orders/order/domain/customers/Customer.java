@@ -14,7 +14,7 @@ public class Customer {
     @Column(name = "CUSTOMER_ID")
     private int customer_id;
     @OneToMany (cascade = CascadeType.ALL)
-    @Column(name = "ORDER_ID")
+    @JoinColumn(name = "CUSTOMER_ID")
     private List<Order> orderList;
 
     @Column(name = "NAME")
