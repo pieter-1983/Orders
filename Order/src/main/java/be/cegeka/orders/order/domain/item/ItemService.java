@@ -12,23 +12,31 @@ public class ItemService {
     @Inject
     private ItemRepository itemRepository;
 
-    public void addItem(String name, String description , double sellPrice){
-        Item item = new Item(name , description , sellPrice);
+    public void addItem(String name, String description, double sellPrice) {
+        Item item = new Item(name, description, sellPrice);
         itemRepository.addItem(item);
     }
 
     public Item findItemByName(String name) throws Exception {
-        for (Item item : itemRepository.getAllItems())
-        {
-            if (item.getName().equals(name))
-            {
-                return  item;
+        for (Item item : itemRepository.getAll()) {
+            if (item.getName().equals(name)) {
+                return item;
             }
         }
         throw new Exception("there is no item found");
     }
 
-    public List<Item> getAllItems(){
-        return itemRepository.getAllItems();
+    public List<Item> getAllItems() {
+        return itemRepository.getAll();
+    }
+
+    public Item findItemByID(int item_id) throws Exception {
+        for (Item item : itemRepository.getAll()) {
+            if (item.getId()==item_id) {
+                return item;
+            }
+        }
+        throw new Exception("there is no item found");
+
     }
 }

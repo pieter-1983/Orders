@@ -14,19 +14,21 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name =  "STOCK_ID")
     private int stockId;
 
-    @Column(name =  "ITEM_ID")
-    private int itemId;
+    @OneToMany
+    @Column(name = "STOCK_ENTRY_DATA")
+    private List<StockEntryData> stockOverview;
 
-    @Column(name =  "QUANTITY")
-    private int quantity;
-
-    public int getQuantity() {
-        return quantity;
+    public Stock() {
+        stockOverview = new ArrayList<>();
     }
+    public void addEntryDataToStock(StockEntryData entryData){
+        stockOverview.add(entryData);
+    }
+
+
 
     //
 //    @Column (name = "STOCK")

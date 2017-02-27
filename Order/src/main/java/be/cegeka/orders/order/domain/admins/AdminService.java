@@ -7,6 +7,7 @@ import be.cegeka.orders.order.domain.item.Item;
 import be.cegeka.orders.order.domain.item.ItemRepository;
 import be.cegeka.orders.order.domain.item.ItemService;
 import be.cegeka.orders.order.domain.orders.Order;
+import be.cegeka.orders.order.domain.stock.StockService;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,7 +21,8 @@ public class AdminService {
 
     @Inject
     private AdminRepository adminRepository;
-
+    @Inject
+    private StockService stockService;
     @Inject
     private ItemService itemService;
 
@@ -36,7 +38,7 @@ public class AdminService {
     }
 
     public void createNewAdmin(String name) {
-        Admin newAdmin= new Admin(name);
+        Admin newAdmin = new Admin(name);
         adminRepository.addAdmin(newAdmin);
     }
 
@@ -51,4 +53,8 @@ public class AdminService {
 
     }
 
+    public void createStockEntryData(int item_id, int quantity) throws Exception {
+        Item item=itemService.findItemByID(item_id);
+        stockService.addStockEntryData(item, quantity);
+    }
 }
