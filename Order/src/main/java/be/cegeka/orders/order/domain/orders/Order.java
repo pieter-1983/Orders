@@ -15,14 +15,14 @@ public class Order {
     private int order_id;
 
     @Column(name = "ORDER_DATE")
-
     private LocalDate orderDate;
+
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
 
     @OneToMany
     @Column(name = "ITEM_QUANTITY_COMBO")
-    private List<ItemQuantityCombo> shoppingCart;
+    private List<OrderEntryData> shoppingCart;
     @Column(name = "DELIVERY_DATE")
     private LocalDate shippingDate;
 
@@ -39,15 +39,15 @@ public class Order {
         return totalPrice;
     }
 
-    public void addItemQuantityCombo(ItemQuantityCombo combo){
+    public void addItemQuantityCombo(OrderEntryData combo){
         shoppingCart.add(combo);
     }
 
     private void calculateTotalPrice(){
         this.totalPrice = 0;
-        for (ItemQuantityCombo itemQuantityCombo : shoppingCart)
+        for (OrderEntryData orderEntryData : shoppingCart)
         {
-            totalPrice += itemQuantityCombo.getPrice();
+            totalPrice += orderEntryData.getPrice();
         }
     }
 
@@ -56,7 +56,7 @@ public class Order {
         return order_id;
     }
 
-    public List<ItemQuantityCombo> getShoppingCart() {
+    public List<OrderEntryData> getShoppingCart() {
         return shoppingCart;
     }
 

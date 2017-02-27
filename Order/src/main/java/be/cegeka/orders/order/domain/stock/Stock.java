@@ -1,6 +1,6 @@
 package be.cegeka.orders.order.domain.stock;
-import be.cegeka.orders.order.domain.orders.ItemQuantityCombo;
 
+import javax.inject.Named;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by dieterp on 23/02/2017.
  */
+@Named
 @Entity
 @Table(name = "STOCK")
 public class Stock {
@@ -32,6 +33,6 @@ public class Stock {
 
     //
 //    @Column (name = "STOCK")
-//    List<ItemQuantityCombo> stock = new ArrayList<>();
+//    List<OrderEntryData> stock = new ArrayList<>();
 
 }

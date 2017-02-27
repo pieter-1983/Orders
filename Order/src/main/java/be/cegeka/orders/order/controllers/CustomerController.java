@@ -28,7 +28,7 @@ public class CustomerController {
         customerService.addCustomer(firstName, lastName, address, eMail, phoneNumber);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "order",method = RequestMethod.POST)
     @ResponseBody
     public void addItemToOrder(
             @RequestParam(value = "customerID", required = true) int customer_id,

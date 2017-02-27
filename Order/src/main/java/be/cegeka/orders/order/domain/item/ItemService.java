@@ -18,7 +18,7 @@ public class ItemService {
     }
 
     public Item findItemByName(String name) throws Exception {
-        for (Item item : itemRepository.getAll()) {
+        for (Item item : itemRepository.getAllItems()) {
             if (item.getName().equals(name)) {
                 return item;
             }
@@ -27,11 +27,11 @@ public class ItemService {
     }
 
     public List<Item> getAllItems() {
-        return itemRepository.getAll();
+        return itemRepository.getAllItems();
     }
 
     public Item findItemByID(int item_id) throws Exception {
-        for (Item item : itemRepository.getAll()) {
+        for (Item item : itemRepository.getAllItems()) {
             if (item.getId()==item_id) {
                 return item;
             }

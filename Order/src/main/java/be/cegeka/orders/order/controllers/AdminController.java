@@ -44,7 +44,6 @@ public class AdminController {
 
 
     @RequestMapping(value = "admin", method = RequestMethod.POST)
-
     @ResponseBody
     public void createAdmin(
             @RequestParam(value = "name", required = true) String name) throws Exception {
@@ -63,7 +62,7 @@ public class AdminController {
         return adminService.getAllAdmins();
     }
 
-    @RequestMapping(value = "admin", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/stock", method = RequestMethod.POST)
     @ResponseBody
     public void createStockEntryData(
             @RequestParam(value = "item_id", required = true) int item_id,

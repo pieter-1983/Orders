@@ -25,7 +25,7 @@ public class OrderService {
         // loopt over lege lijst ...
         //for (Item input : inputs) {
         if (checkIfItemExists(input)) {
-            ItemQuantityCombo inputOrderEntry = new ItemQuantityCombo(input, quantity);
+            OrderEntryData inputOrderEntry = new OrderEntryData(input, quantity);
             tempOrder.getShoppingCart().add(inputOrderEntry);
         }
         return tempOrder;
