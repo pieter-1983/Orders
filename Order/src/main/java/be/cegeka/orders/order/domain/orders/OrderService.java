@@ -36,7 +36,7 @@ public class OrderService {
 
     public boolean checkIfItemExists(Item input) {
 
-        for (Item item : itemRepository.getAllItems()) {
+        for (Item item : itemRepository.getAll()) {
             if (item.getName().equals(input.getName())) {
                 return true;
             }
