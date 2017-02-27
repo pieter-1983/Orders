@@ -14,7 +14,6 @@ public class ItemService {
 
     public void addItem(String name, String description , double sellPrice){
         Item item = new Item(name , description , sellPrice);
-
         itemRepository.addItem(item);
     }
 
