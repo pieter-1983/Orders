@@ -34,6 +34,9 @@ public class Item {
         this.sellingPrice = sellingPrice;
     }
 
+    public Item() {
+    }
+
     public double getSellingPrice() {
         return sellingPrice;
     }
