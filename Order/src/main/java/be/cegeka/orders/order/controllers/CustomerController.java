@@ -35,6 +35,6 @@ public class CustomerController {
             @RequestParam(value = "item_id") int item_id,
             @RequestParam(value = "quantity") int quantity,
             @RequestParam(value = "order_id", required = false) int order_id) throws Exception {
-                orderService.createOrderEntry(customer_id item_id, quantity, order_id);
+                orderService.createOrderEntry(customer_id, item_id, quantity, order_id);
     }
 }
