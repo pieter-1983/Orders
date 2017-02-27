@@ -7,11 +7,8 @@ public class OrderService {
 
     @Inject
     private OrderRepository orderRepository;
-
-
-    public void addOrderToRepository(Order order){
-
+    
+    public void addOrder (Order order){
+        orderRepository.addOrder(order);
     }
-
-
 }
