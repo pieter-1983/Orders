@@ -13,9 +13,6 @@ import java.awt.print.Book;
 import java.util.Arrays;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by stevene on 24/02/2017.
- */
 public class CustomerServiceTest {
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
@@ -39,7 +36,4 @@ public class CustomerServiceTest {
         customerService.addCustomer("woef","waf", "Koekoekstraat 70", "woefwaf@gmail.com", "0497123446");
         Mockito.verify(customerRepository).addCustomer(Mockito.refEq(new Customer("woef","waf", "Koekoekstraat 70", "woefwaf@gmail.com", "0497123446"),"id"));
     }
-
-
-
 }

@@ -21,7 +21,6 @@ public class OrderService {
 
     public Order createOrderEntry(Item input, int quantity) {
         Order tempOrder = new Order();
-
         // loopt over lege lijst ...
         //for (Item input : inputs) {
         if (checkIfItemExists(input)) {
@@ -30,13 +29,10 @@ public class OrderService {
         }
         return tempOrder;
     }
-////        }
-////        return tempOrder;
-//    }
 
     public boolean checkIfItemExists(Item input) {
 
-        for (Item item : itemRepository.getAll()) {
+        for (Item item : itemRepository.getAllItems()) {
             if (item.getName().equals(input.getName())) {
                 return true;
             }

@@ -10,9 +10,7 @@ import org.mockito.junit.MockitoRule;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.*;
 
-
 public class ItemServiceTest {
-
 
     @Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
     @InjectMocks
@@ -28,5 +26,4 @@ public class ItemServiceTest {
         itemService.addItem("Cola", "Grote Fles", 10);
         verify(mockedItemRepository).addItem(refEq(item, "id"));
     }
-
 }

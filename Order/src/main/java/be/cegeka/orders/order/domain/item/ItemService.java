@@ -4,9 +4,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
-/**
- * Created by dieterp on 24/02/2017.
- */
 @Named
 public class ItemService {
     @Inject
@@ -37,6 +34,5 @@ public class ItemService {
             }
         }
         throw new Exception("there is no item found");
-
     }
 }

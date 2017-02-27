@@ -16,7 +16,6 @@ public class Customer {
     @OneToMany (cascade = CascadeType.ALL)
     @JoinColumn(name = "CUSTOMER_ID")
     private List<Order> orderList;
-
     @Column(name = "FIRST_NAME")
     private String firstName;
     @Column(name = "LAST_NAME")

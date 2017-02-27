@@ -5,9 +5,6 @@ import be.cegeka.orders.order.domain.item.Item;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * Created by pieterst on 27/02/2017.
- */
 @Named
 public class StockService {
     @Inject

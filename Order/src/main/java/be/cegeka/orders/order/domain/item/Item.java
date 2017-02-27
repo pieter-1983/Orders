@@ -5,9 +5,6 @@ import be.cegeka.orders.order.domain.stock.Stock;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created by dieterp on 23/02/2017.
- */
 @Entity
 @Table(name = "ITEMS")
 public class Item {
@@ -67,5 +64,4 @@ public class Item {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
-
 }

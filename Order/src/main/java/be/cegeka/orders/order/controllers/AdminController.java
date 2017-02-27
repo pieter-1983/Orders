@@ -17,10 +17,6 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.List;
 
-/**
- * Created by dieterp on 24/02/2017.
- */
-
 @Controller
 public class AdminController {
 
@@ -31,7 +27,6 @@ public class AdminController {
     @Inject
     private StockService stockService;
 
-
     @RequestMapping(value = "admin/item", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -41,7 +36,6 @@ public class AdminController {
             @RequestParam(value = "price", required = true) double sellPrice) {
         adminService.addItem(name, description, sellPrice);
     }
-
 
     @RequestMapping(value = "admin", method = RequestMethod.POST)
     @ResponseBody
@@ -69,5 +63,4 @@ public class AdminController {
             @RequestParam(value = "quantity", required = true) int quantity) throws Exception {
         adminService.createStockEntryData(item_id, quantity);
     }
-
 }

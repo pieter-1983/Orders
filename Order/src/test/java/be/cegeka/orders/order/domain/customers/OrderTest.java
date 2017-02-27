@@ -35,6 +35,5 @@ public class OrderTest {
         order.addItemQuantityCombo(deFantaCombo);
 
         Assertions.assertThat(order.getTotalPrice()).isEqualTo(64);
-
     }
 }

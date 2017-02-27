@@ -5,9 +5,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dieterp on 23/02/2017.
- */
 @Named
 @Entity
 @Table(name = "STOCK")
@@ -15,7 +12,7 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name =  "STOCK_ID")
+    @Column(name = "STOCK_ID")
     private int stockId;
 
     @OneToMany
@@ -25,14 +22,8 @@ public class Stock {
     public Stock() {
         stockOverview = new ArrayList<>();
     }
-    public void addEntryDataToStock(StockEntryData entryData){
+
+    public void addEntryDataToStock(StockEntryData entryData) {
         stockOverview.add(entryData);
     }
-
-
-
-    //
-//    @Column (name = "STOCK")
-//    List<OrderEntryData> stock = new ArrayList<>();
-
 }

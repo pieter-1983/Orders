@@ -13,10 +13,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDER_ID")
     private int order_id;
-
     @Column(name = "ORDER_DATE")
     private LocalDate orderDate;
-
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
 
@@ -51,7 +49,6 @@ public class Order {
         }
     }
 
-
     public int getOrder_id() {
         return order_id;
     }
@@ -61,4 +58,3 @@ public class Order {
     }
 
 }
-//future stories -- amount spent per customer

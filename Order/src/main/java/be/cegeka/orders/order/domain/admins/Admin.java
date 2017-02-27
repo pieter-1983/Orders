@@ -2,9 +2,6 @@ package be.cegeka.orders.order.domain.admins;
 
 import javax.persistence.*;
 
-/**
- * Created by pieterst on 27/02/2017.
- */
 @Entity
 @Table(name = "ADMINS")
 public class Admin {

@@ -13,9 +13,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
-/**
- * Created by pieterst on 27/02/2017.
- */
 @Named
 public class AdminService {
 
@@ -42,7 +39,6 @@ public class AdminService {
         adminRepository.addAdmin(newAdmin);
     }
 
-
     public List<Admin> getAllAdmins() {
         return adminRepository.getAllAdmins();
     }
@@ -50,7 +46,6 @@ public class AdminService {
     public List<Order> viewOrderOfCustomer(int id) throws Exception {
         Customer foundCustomer = customerService.findCustomerByID(id);
         return foundCustomer.getOrderList();
-
     }
 
     public void createStockEntryData(int item_id, int quantity) throws Exception {

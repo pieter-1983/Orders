@@ -4,9 +4,6 @@ import be.cegeka.orders.order.domain.item.Item;
 
 import javax.persistence.*;
 
-/**
- * Created by pieterst on 27/02/2017.
- */
 @Entity
 @Table(name = "STOCK_ENTRY_DATA")
 public class StockEntryData {
@@ -27,5 +24,4 @@ public class StockEntryData {
         this.item = item;
         this.quantity = quantity;
     }
-
 }

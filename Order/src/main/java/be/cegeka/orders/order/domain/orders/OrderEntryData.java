@@ -31,13 +31,4 @@ public class OrderEntryData {
         return quantity;
     }
 
-
-
-//    public boolean isOrderMoreThanStock (OrderEntryData itemQuantityCombo) {
-//     if(itemQuantityCombo.quantity <= item.getStockQuantity() )
-//     {
-//         return false;
-//     }
-//     return true;
-//    }
 }
