@@ -6,6 +6,7 @@ import be.cegeka.orders.order.domain.customers.CustomerService;
 import be.cegeka.orders.order.domain.item.Item;
 import be.cegeka.orders.order.domain.item.ItemRepository;
 import be.cegeka.orders.order.domain.item.ItemService;
+import be.cegeka.orders.order.domain.orders.Order;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -43,4 +44,11 @@ public class AdminService {
     public List<Admin> getAllAdmins() {
         return adminRepository.getAllAdmins();
     }
+
+    public List<Order> viewOrderOfCustomer(int id) throws Exception {
+        Customer foundCustomer = customerService.findCustomerByID(id);
+        return foundCustomer.getOrderList();
+
+    }
+
 }
