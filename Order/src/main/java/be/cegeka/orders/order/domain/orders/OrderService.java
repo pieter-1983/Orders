@@ -1,5 +1,7 @@
 package be.cegeka.orders.order.domain.orders;
 
+import be.cegeka.orders.order.domain.customers.Customer;
+import be.cegeka.orders.order.domain.customers.CustomerService;
 import be.cegeka.orders.order.domain.item.Item;
 import be.cegeka.orders.order.domain.item.ItemRepository;
 
@@ -15,28 +17,51 @@ public class OrderService {
     @Inject
     private ItemRepository itemRepository;
 
+    @Inject
+    private CustomerService customerService;
+
     public void addOrder(Order order) {
         orderRepository.addOrder(order);
     }
 
-    public Order createOrderEntry(Item input, int quantity) {
-        Order tempOrder = new Order();
-        // loopt over lege lijst ...
-        //for (Item input : inputs) {
-        if (checkIfItemExists(input)) {
-            OrderEntryData inputOrderEntry = new OrderEntryData(input, quantity);
-            tempOrder.getShoppingCart().add(inputOrderEntry);
-        }
-        return tempOrder;
+    public Order createOrderEntry(int customer_id, int item_id, int quantity) throws Exception {
+        Order shoppingCart = new Order();
+        Customer customer = customerService.findCustomerByID(customer_id);
+        customer.addOrdertoOrderList(shoppingCart);
+        
+        Item item = getRequestedItem(item_id);
+        OrderEntryData inputOrderEntry = new OrderEntryData(item, quantity);
+        shoppingCart.getContent().add(inputOrderEntry);
+
+        return shoppingCart;
     }
 
-    public boolean checkIfItemExists(Item input) {
+    public Order createOrderEntry(int custumor_id, int item_id, int quantity, int order_id) throws Exception {
+        Order shoppingCart = getRequestedOrder(order_id);
 
-        for (Item item : itemRepository.getAllItems()) {
-            if (item.getName().equals(input.getName())) {
-                return true;
+        Item item = getRequestedItem(item_id);
+        OrderEntryData inputOrderEntry = new OrderEntryData(item, quantity);
+        shoppingCart.getContent().add(inputOrderEntry);
+
+        return shoppingCart;
+    }
+
+    private Order getRequestedOrder(int order_id) throws Exception {
+        for (Order order : orderRepository.getAllOrders()) {
+            if (order.getOrder_id() == order_id) {
+                return order;
             }
         }
-        return false;
+        throw new Exception("invalid order_id");
     }
+
+    private Item getRequestedItem(int item_id) throws Exception {
+        for (Item item : itemRepository.getAllItems()) {
+            if (item.getId() == item_id) {
+                return item;
+            }
+        }
+        throw  new Exception("does not exist");
+    }
+
 }

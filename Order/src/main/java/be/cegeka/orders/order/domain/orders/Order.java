@@ -20,14 +20,14 @@ public class Order {
 
     @OneToMany
     @Column(name = "ITEM_QUANTITY_COMBO")
-    private List<OrderEntryData> shoppingCart;
+    private List<OrderEntryData> content;
     @Column(name = "DELIVERY_DATE")
     private LocalDate shippingDate;
 
 
     public Order() {
         this.orderDate = LocalDate.now();
-        shoppingCart = new ArrayList<>();
+        content = new ArrayList<>();
         // shipping date
         this.shippingDate = LocalDate.now().plusDays(1);
     }
@@ -38,12 +38,12 @@ public class Order {
     }
 
     public void addItemQuantityCombo(OrderEntryData combo){
-        shoppingCart.add(combo);
+        content.add(combo);
     }
 
     private void calculateTotalPrice(){
         this.totalPrice = 0;
-        for (OrderEntryData orderEntryData : shoppingCart)
+        for (OrderEntryData orderEntryData : content)
         {
             totalPrice += orderEntryData.getPrice();
         }
@@ -53,8 +53,8 @@ public class Order {
         return order_id;
     }
 
-    public List<OrderEntryData> getShoppingCart() {
-        return shoppingCart;
+    public List<OrderEntryData> getContent() {
+        return content;
     }
 
 }
