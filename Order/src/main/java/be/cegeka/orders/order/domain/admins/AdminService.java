@@ -40,5 +40,7 @@ public class AdminService {
     }
 
 
-
+    public List<Admin> getAllAdmins() {
+        return adminRepository.getAllAdmins();
+    }
 }

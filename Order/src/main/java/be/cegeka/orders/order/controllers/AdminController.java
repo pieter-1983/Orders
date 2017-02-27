@@ -1,6 +1,9 @@
 package be.cegeka.orders.order.controllers;
 
+import be.cegeka.orders.order.domain.admins.Admin;
 import be.cegeka.orders.order.domain.admins.AdminService;
+import be.cegeka.orders.order.domain.customers.Customer;
+import be.cegeka.orders.order.domain.customers.CustomerService;
 import be.cegeka.orders.order.domain.item.Item;
 import be.cegeka.orders.order.domain.item.ItemService;
 import org.springframework.stereotype.Controller;
@@ -22,32 +25,39 @@ public class AdminController {
 
     @Inject
     private AdminService adminService;
+    @Inject
+    private  CustomerService customerService;
 
-    @RequestMapping(value = "/item", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<Item> getItems(){
-        return  adminService.getAllCustomers();
-    }
 
-    @RequestMapping(value = "/item", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/item", method = RequestMethod.POST)
     public
     @ResponseBody
     void addItem(
             @RequestParam(value = "name", required = true) String name,
             @RequestParam(value = "description", required = true) String description,
-            @RequestParam(value = "price", required = true) double sellPrice)
-    {
-        adminService.addItem(name,description,sellPrice);
+            @RequestParam(value = "price", required = true) double sellPrice) {
+        adminService.addItem(name, description, sellPrice);
     }
 
 
-    @RequestMapping(value = "item/search", method = RequestMethod.GET)
+    @RequestMapping(value = "admin", method = RequestMethod.POST)
     public
     @ResponseBody
-    Item searchItemByName(
+    void createAdmin(
             @RequestParam(value = "name", required = true) String name) throws Exception {
-        return adminService.findItemByName(name);
+        adminService.createNewAdmin(name);
+    }
+
+    @RequestMapping(value = "admin/customer",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
+    }
+
+    @RequestMapping(value = "admin",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Admin> getAllAdmins() {
+        return adminService.getAllAdmins();
     }
 
 }
