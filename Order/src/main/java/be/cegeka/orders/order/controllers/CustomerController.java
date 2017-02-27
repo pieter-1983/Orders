@@ -14,17 +14,21 @@ public class CustomerController {
     @Inject
     private CustomerService customerService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    @ResponseBody
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
-    }
+    /// RESPONSIBILITY OF ADMIN!!
+//    @RequestMapping(method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<Customer> getAllCustomers() {
+//        return customerService.getAllCustomers();
+//    }
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public void addCustomer(
-            @RequestParam(value = "name") String name,
-            @RequestParam(value = "lastName") String lastName){
-        customerService.addCustomer(name, lastName);
+            @RequestParam(value = "firstName") String firstName,
+            @RequestParam(value = "lastName") String lastName,
+            @RequestParam(value = "address") String address,
+            @RequestParam(value = "eMail") String eMail,
+            @RequestParam(value = "phoneNumber") String phoneNumber){
+        customerService.addCustomer(firstName, lastName, address, eMail, phoneNumber);
     }
 }

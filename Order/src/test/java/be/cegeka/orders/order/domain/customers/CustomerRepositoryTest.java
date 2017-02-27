@@ -33,8 +33,8 @@ public class CustomerRepositoryTest {
 
     @Before
     public void setupDatabase() {
-        seppe = new Customer("Seppe", "Gielen");
-        johan = new Customer("Johan", "Vdw");
+        seppe = new Customer("Seppe", "Gielen", "Koekoekstraat 70", "seppe_gielen@hotmail.com", "0499123445");
+        johan = new Customer("Johan", "Vdw",  "Koekoekstraat 28", "Johan_vdw@hotmail.com", "0499334477");
 
         entityManager.persist(seppe);
         entityManager.persist(johan);

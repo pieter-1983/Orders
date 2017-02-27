@@ -16,9 +16,10 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return customerRepository.getAll();
     }
+
 @Transactional
-    public void addCustomer(String name, String lastName) {
-        Customer customer=new Customer(name,lastName);
+    public void addCustomer(String name, String lastName, String address, String eMail, String phoneNumber) {
+        Customer customer = new Customer(name,lastName, address, eMail, phoneNumber);
         customerRepository.addCustomer(customer);
     }
 }
