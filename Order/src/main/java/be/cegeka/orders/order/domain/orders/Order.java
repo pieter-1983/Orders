@@ -19,20 +19,20 @@ public class Order {
     private LocalDate orderDate;
     @Column(name = "TOTAL_PRICE")
     private double totalPrice;
+
     @OneToMany
     @Column(name = "ITEM_QUANTITY_COMBO")
     private List<ItemQuantityCombo> shoppingCart;
     @Column(name = "DELIVERY_DATE")
     private LocalDate shippingDate;
 
+
     public Order() {
         this.orderDate = LocalDate.now();
         shoppingCart = new ArrayList<>();
-
         // shipping date
         this.shippingDate = LocalDate.now().plusDays(1);
     }
-
 
     public double getTotalPrice() {
         calculateTotalPrice();
@@ -51,23 +51,14 @@ public class Order {
         }
     }
 
-    // meth Calc shippingdate (shipping date=+1 , plusDays(7)
-
-//    public void caclulateShippingDate()
-//    {
-//        for (ItemQuantityCombo itemQuantityCombo : shoppingCart) {
-//            if (itemQuantityCombo.getStock() == false)
-//            {
-//                shippingDate = orderDate.plusWeeks(1);
-//            }
-//        }
-//    }
-
-
-
 
     public int getOrder_id() {
         return order_id;
     }
+
+    public List<ItemQuantityCombo> getShoppingCart() {
+        return shoppingCart;
+    }
+
 }
 //future stories -- amount spent per customer
