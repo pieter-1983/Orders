@@ -46,6 +46,10 @@ public class Customer {
         return orderList;
     }
 
+    public void addOrdertoOrderList(Order order) {
+        orderList.add(order);
+    }
+
     public String getFirstName() {
         return firstName;
     }
