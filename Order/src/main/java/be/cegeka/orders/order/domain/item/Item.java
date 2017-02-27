@@ -20,7 +20,12 @@ public class Item {
     @Column(name = "NAME")
     private String name;
 
+    public int getId() {
+        return id;
+    }
+
     @Column(name = "DESCRIPTION")
+
     private String description;
 
     @Column(name = "SELLING_PRICE")
