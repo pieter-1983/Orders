@@ -20,7 +20,7 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(String userName) {
+    public Admin(String adminName) {
         this.adminName = adminName;
     }
 

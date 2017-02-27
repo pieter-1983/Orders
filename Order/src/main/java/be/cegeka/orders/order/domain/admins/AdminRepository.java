@@ -3,6 +3,7 @@ package be.cegeka.orders.order.domain.admins;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class AdminRepository {
     public List<Admin> getAllAdmins(){
         return entityManager.createQuery("select a from Admin a" , Admin.class).getResultList();
     }
-
+    @Transactional
     public void addAdmin(Admin admin) {
         entityManager.persist(admin);
     }
