@@ -24,26 +24,23 @@ public class OrderService {
         orderRepository.addOrder(order);
     }
 
-    public Order createOrderEntry(int customer_id, int item_id, int quantity) throws Exception {
+    public void createOrderEntry(int customer_id, int item_id, int quantity) throws Exception {
         Order shoppingCart = new Order();
         Customer customer = customerService.findCustomerByID(customer_id);
-        customer.addOrdertoOrderList(shoppingCart);
-        
+
         Item item = getRequestedItem(item_id);
         OrderEntryData inputOrderEntry = new OrderEntryData(item, quantity);
         shoppingCart.getContent().add(inputOrderEntry);
 
-        return shoppingCart;
+        customer.addOrdertoOrderList(shoppingCart);
     }
 
-    public Order createOrderEntry(int customer_id, int item_id, int quantity, int order_id) throws Exception {
+    public void createOrderEntry(int customer_id, int item_id, int quantity, int order_id) throws Exception {
         Order shoppingCart = getRequestedOrder(order_id);
 
         Item item = getRequestedItem(item_id);
         OrderEntryData inputOrderEntry = new OrderEntryData(item, quantity);
         shoppingCart.getContent().add(inputOrderEntry);
-
-        return shoppingCart;
     }
 
     private Order getRequestedOrder(int order_id) throws Exception {
