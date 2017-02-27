@@ -30,4 +30,14 @@ public class ItemQuantityCombo {
     public int getQuantity() {
         return quantity;
     }
+
+
+
+//    public boolean isOrderMoreThanStock (ItemQuantityCombo itemQuantityCombo) {
+//     if(itemQuantityCombo.quantity <= item.getStockQuantity() )
+//     {
+//         return false;
+//     }
+//     return true;
+//    }
 }

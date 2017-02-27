@@ -1,5 +1,7 @@
 package be.cegeka.orders.order.domain.item;
 
+import be.cegeka.orders.order.domain.stock.Stock;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -60,4 +62,5 @@ public class Item {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
 }

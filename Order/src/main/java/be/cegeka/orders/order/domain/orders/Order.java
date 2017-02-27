@@ -1,7 +1,5 @@
 package be.cegeka.orders.order.domain.orders;
 
-import be.cegeka.orders.order.domain.customers.Customer;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,14 +21,16 @@ public class Order {
     private double totalPrice;
     @OneToMany
     @Column(name = "ITEM_QUANTITY_COMBO")
-    private List<ItemQuantityCombo> itemQuantityCombos;
+    private List<ItemQuantityCombo> shoppingCart;
     @Column(name = "DELIVERY_DATE")
-    private LocalDate deliverydate;
+    private LocalDate shippingDate;
 
     public Order() {
         this.orderDate = LocalDate.now();
-        itemQuantityCombos = new ArrayList<>();
-        this.deliverydate=LocalDate.now().plusDays(7);
+        shoppingCart = new ArrayList<>();
+
+        // shipping date
+        this.shippingDate = LocalDate.now().plusDays(1);
     }
 
 
@@ -40,16 +40,30 @@ public class Order {
     }
 
     public void addItemQuantityCombo(ItemQuantityCombo combo){
-        itemQuantityCombos.add(combo);
+        shoppingCart.add(combo);
     }
 
     private void calculateTotalPrice(){
         this.totalPrice = 0;
-        for (ItemQuantityCombo itemQuantityCombo : itemQuantityCombos)
+        for (ItemQuantityCombo itemQuantityCombo : shoppingCart)
         {
             totalPrice += itemQuantityCombo.getPrice();
         }
     }
+
+    // meth Calc shippingdate (shipping date=+1 , plusDays(7)
+
+//    public void caclulateShippingDate()
+//    {
+//        for (ItemQuantityCombo itemQuantityCombo : shoppingCart) {
+//            if (itemQuantityCombo.getStock() == false)
+//            {
+//                shippingDate = orderDate.plusWeeks(1);
+//            }
+//        }
+//    }
+
+
 
 
     public int getOrder_id() {
