@@ -18,8 +18,8 @@ public class CustomerService {
     }
 
 @Transactional
-    public void addCustomer(String name, String lastName, String address, String eMail, String phoneNumber) {
-        Customer customer = new Customer(name,lastName, address, eMail, phoneNumber);
+    public void addCustomer(String firstName, String lastName, String address, String eMail, String phoneNumber) {
+        Customer customer = new Customer(firstName,lastName, address, eMail, phoneNumber);
         customerRepository.addCustomer(customer);
     }
 }
