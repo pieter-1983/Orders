@@ -36,7 +36,7 @@ public class OrderService {
         return shoppingCart;
     }
 
-    public Order createOrderEntry(int custumor_id, int item_id, int quantity, int order_id) throws Exception {
+    public Order createOrderEntry(int customer_id, int item_id, int quantity, int order_id) throws Exception {
         Order shoppingCart = getRequestedOrder(order_id);
 
         Item item = getRequestedItem(item_id);
@@ -63,5 +63,4 @@ public class OrderService {
         }
         throw  new Exception("does not exist");
     }
-
 }
