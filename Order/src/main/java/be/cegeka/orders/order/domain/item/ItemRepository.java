@@ -14,7 +14,7 @@ public class ItemRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Item> getAllItems(){
+    public List<Item> getAll(){
         return entityManager.createQuery("select c from Item c" , Item.class).getResultList();
     }
     @Transactional
