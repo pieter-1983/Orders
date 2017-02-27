@@ -1,10 +1,8 @@
 package be.cegeka.orders.order.domain.customers;
 
 import be.cegeka.orders.order.OrderApplication;
-import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
