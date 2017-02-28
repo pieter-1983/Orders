@@ -16,7 +16,7 @@ public class ItemRepository {
     public List<Item> getAllItems(){
         return entityManager.createQuery("select c from Item c" , Item.class).getResultList();
     }
-    @Transactional
+
     public void addItem(Item item) {
         entityManager.persist(item);
     }

@@ -16,7 +16,7 @@ public class AdminRepository {
         return entityManager.createQuery("select a from Admin a" , Admin.class).getResultList();
     }
 
-    @Transactional
+
     public void addAdmin(Admin admin) {
         entityManager.persist(admin);
     }

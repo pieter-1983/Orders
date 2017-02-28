@@ -6,9 +6,11 @@ import be.cegeka.orders.order.domain.orders.OrderService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping(path = "/customer")
+@Transactional
 public class CustomerController {
 
     @Inject

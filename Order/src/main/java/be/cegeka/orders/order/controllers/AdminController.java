@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
+import javax.transaction.Transactional;
 import java.util.List;
-
+@Transactional
 @Controller
 public class AdminController {
 

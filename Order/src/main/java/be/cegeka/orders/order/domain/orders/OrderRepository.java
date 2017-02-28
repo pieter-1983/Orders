@@ -16,7 +16,7 @@ public class OrderRepository {
         return entityManager.createQuery("select o from Order o" , Order.class).getResultList();
     }
 
-    @Transactional
+
     public void addOrder(Order order) {
         entityManager.persist(order);
     }

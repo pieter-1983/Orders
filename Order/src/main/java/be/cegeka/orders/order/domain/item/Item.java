@@ -1,6 +1,7 @@
 package be.cegeka.orders.order.domain.item;
 
 import be.cegeka.orders.order.domain.stock.Stock;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,10 +23,10 @@ public class Item {
     }
 
     @Column(name = "DESCRIPTION")
-
+    @Type(type="text")
     private String description;
 
-    @Column(name = "SELLING_PRICE")
+    @Column(name = "SELLING_PRICE",  columnDefinition="Decimal(10,2)")
     private double sellingPrice;
 
     public Item(String name, String description, double sellingPrice) {

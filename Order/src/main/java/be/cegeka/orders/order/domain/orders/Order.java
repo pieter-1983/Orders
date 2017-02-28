@@ -15,11 +15,11 @@ public class Order {
     private int order_id;
     @Column(name = "ORDER_DATE")
     private LocalDate orderDate;
-    @Column(name = "TOTAL_PRICE")
+    @Column(name = "TOTAL_PRICE",  columnDefinition="Decimal(10,2)")
     private double totalPrice;
 
     @OneToMany
-    @Column(name = "ITEM_QUANTITY_COMBO")
+    @JoinColumn(name = "ORDER_ID")
     private List<OrderEntryData> content;
     @Column(name = "DELIVERY_DATE")
     private LocalDate shippingDate;
